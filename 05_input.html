@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Input Element</title>
+        
+    </head>
+    <body>
+        <!-- 너비를 넘어가면 자동 스크롤링 됨. --> <!-- input type 에선 공간이 존재하면 그 공간을 먹고, 없으면 그 아랫단으로 내려간다. (앞에와 같은 말)-->
+        <input type="text" size="80" placeholder="아이디내놔">
+        <input type="text"> <br>
+
+        <input type="radio" name="aaa">aaa</input>
+        <input type="radio" name="bbb ">bbb</input>
+        <!-- 오디오 꼽는 잭 같아서 라디오. 선택 탭. -->
+        <br>
+
+        <!-- label 요소를 이용하면 글씨를 눌렀을때 선택이 됨. -->
+        <input type="radio" name="rg2" id="rb1">
+        <label for="rb1">Male</label>
+
+        <input type="radio" name="rg1" id="rb2" checked="checked">
+        <label for="rb2">Female</label>
+
+        <hr>
+        
+        <!-- checkbox는 멀티초이스 방법이다.(다중 선택) -->
+        <label>
+            <input type="checkbox">Apple
+        </label>
+        <label><input type="checkbox">Orange</label>
+        <label><input type="checkbox">Banana</label>
+
+        <!-- 제출 버튼과 초기화 버튼: <form>요소 안에 있을때만 사용 가능. form요소는 누구에게 보내는 것.-->
+
+        <hr>
+
+        <input type="submit" value="전송">
+        <input type="reset">
+        
+        <hr>
+
+        <!-- 버튼 만들기 -->
+        <!-- 1. input 요소의 타입 버튼 -->
+        <!-- alert는 함수임. html에서는 큰따움 안에 큰 따움 사용이 불가능함.-->
+        <input type="button" value="중복체크" onclick="alert('clicked')">
+
+        <!-- 2. button 요소 -->
+        <button onclick="alert('clicked')">중복체크 하겟습니다.</button>
+        <!-- 단순하게 사용 할때는 button을 많이 씀. (메모리 할당량으로 인해서 많이 쓰는 것보단, 적게 씀.)-->
+
+        <!-- 이미지 버튼 만들기. -->
+        <!-- 1<button> 요소안에 img 요소 배치. -->
+        <button>
+            <img src="./Images/Selfie_20230707_사과꽃피어날때_006.jpg" alt="응애" width="100%" onclick="alert('수율')">
+        </button>
+        <input type="image" src="./Images/Selfie_20230719_사과꽃떨어질때_000.jpg" width="100%" onclick="alert('솔터')">
+
+        <hr>
+
+        <!-- 여러줄 입력 -->
+        <!-- cols = 수평, rows = 수직. 수직 값은 화면에 출력되는 상자 크기만 지정이 되며, 수직으론 더 내려간다. 수평은 x -->
+        <!-- 채팅 상자 우측 아래에 화살푤를 이용하여 늘리거나 줄일 수 있다. -->
+        <textarea cols="30" rows="10"></textarea>
+
+        <hr>
+
+        <!-- 콤보 박스 = Select 한개로 엮어서 메뉴로 설정한 후에 선택자를 통해 리스트를 선택 한 것을 보여준다.-->
+
+        <select>
+            <optgroup label="마법사">
+                <option selected>서머너</option>
+                <option>바드</option>
+                <option>소서리스</option>
+            </optgroup>
+            <optgroup label="무도가(여)">
+                <option selected>창술사</option>
+                <option>인파이터</option>
+                <option>배틀마스터</option>
+            </optgroup>
+            <optgroup label="헌터(남)">
+                <option selected>스카우터</option>
+                <option>데빌헌터</option>
+                <option>호크아이</option>
+            </optgroup>
+            <optgroup label="전사(남)">
+                <option selected>워로드</option>
+                <option>버서커</option>
+                <option>홀리나이트</option>
+            </optgroup>
+        </select>
+        <br>
+        <br>
+
+        <table>
+            <fieldset>
+                <legend>인적사항</legend>
+                <input type="text">
+                <br>
+                <input type="text">
+            </fieldset>
+        </table>
+
+    </body>
+</html>
