@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Form Element</title>
+    </head>
+
+    <body>
+
+        <!-- form 요소 : anchor처럼 다른 문서를 실행하지만 데이터를 전달 할 수 있고, 이동을 위한 별도의 input 요소가 필요-->
+
+        <!-- HTTP Request 프로도콜의 2가지 방식 요청 [GET] [POST] 둘의 차이 점이 있음. 보안으로 인해. GET은 보여지는 정보, POST는 보이면 안되는 개인 정보도 존재하고, 용량이 많으면 로딩이 오래걸리니 가리자. 라는 의미-->
+
+        <!-- GET Method -->
+        <form action="./getTest.php" method="get">
+            <input type="text" name="title"> <!-- name속성: 서버에 보낼 데이터를 구별하기 위한 식별자 -->
+            <input type="text" name="msg">
+
+            <input type="submit">
+
+        </form>
+
+    </body>
+
+</html>
