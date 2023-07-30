@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>input</title>
+    </head>
+    <body>
+        
+        <!-- 새로이 추가된 type 들 -->
+
+        <input type="date"> <br>
+        <input type="datetime"> <br>
+        <input type="month"> <br>
+        <input type="time"> <br>
+        <input type="week"> <br>
+        <input type="color"> <br>
+
+        <!-- 모바일에서 소프트 키보드의 모양을 결정함 -->
+        <!-- 안드로이드에서 열어도 깨지지 않는 창. -->
+
+        <input type="email"><br>
+        <input type="tel"><br>
+        <input type="url"><br>
+
+        <input type="search"> <br>
+
+        <input type="range" min="1" max="20" value="2"><br>
+
+        <input type="text" min="5" max="10" placeholder="5글자 이상 10글자 이하로 작성하셔." style="width : 215px"> <br>
+        <input type="number" min="-2" max="10" step="3" value="-2"> <br>
+
+        <input type="text" placeholder="나는 힌트데스.">
+        <hr>
+
+        <!-- 반드시 입력해야하는 요소 [필수 입력란] -->
+        <!-- 절댓값 = required="" -->
+        <input type="text" required> <br>
+        <input type="text" readonly value="반갑습니다. 읽기 전용입니다."> <br>
+
+        <input type="text" autofocus> <br>
+
+        <!-- 최소값(min), 최대값(max) 아닌 최소 글자 값 즉, minlength maxlength으로 설정해야만 글자수가 지정됨.-->
+        <input type="text" minlength="5" maxlength="10"> <br>
+
+        <!-- 자동 완성 기능 : <datalist>는 요소와 함께 써야 함. -->
+        <input type="text" autocomplete list="datas">
+        <datalist id="datas">
+            <option value="franch"></option>
+            <option value="korea"></option>
+            <option value="japan"></option>
+            <option value="china"></option>
+            <option value="USA"></option>
+        </datalist>
+        <input type="submit">
+
+    </body>
+</html>

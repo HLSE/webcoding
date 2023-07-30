@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>fucking php</title>
+    </head>
+
+    <body>
+        <fieldset>
+             <legend>Post 방식 Http 요청</legend>
+                <form action="./getTestpost.php" method="post">
+
+                    name : <input type="text" name="name"><br>
+                    password : <input type="password" name="password"><br><br>
+
+                    <div>
+                        gender : <label><input type="radio" name="gender" value="Male" checked="checked">Male</label> <label><input type="radio" name="gender" value="Female">Female</label><br><br>
+                    </div>
+
+                    fruits : <label><input type="checkbox" name="apple" value="apple">사과</label> <label><input type="checkbox" name="banana" value="banana">바나나</label> <label><input type="checkbox" name="orange" value="orange">오렌지</label><br><br>
+
+                    <textarea name="textarea" cols="30" rows="4"></textarea><br><br>
+
+                    <select name="brand">
+                        <optgroup label="자동차브랜드">
+                            <option value="현대">현대</option>
+                            <option value="기아">기아</option>
+                            <option value="쌍용">쌍용</option>
+                        </optgroup>
+                    </select><br><br>
+            
+                <input type="submit"> <input type="reset">
+
+                </form>
+        </fieldset>
+    </body>
+
+</html>
