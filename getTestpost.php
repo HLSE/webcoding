@@ -8,6 +8,8 @@
     $brand=$_POST['brand'];
     $textarea=$_POST['textarea'];
 
+    //$textarea= nl2br($textarea);
+
 
     echo "<h1>$name</h1>";
     echo "$password<br><br>";
