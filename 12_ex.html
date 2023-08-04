@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>박스모델(요소크기 및 배경)</title>
+
+
+        <style>
+            p.aa{
+                /* 경계선 */
+                border-style:solid;
+                border-top-style:dotted;
+
+                border-width: thin;
+                border-width: 3px;
+                border-bottom-width: 8px;
+
+                border-color: red;
+                border-left-color:aqua;
+                border-right-color:aqua;
+                border-radius: 20px;
+                border-bottom-left-radius: 0px;
+                border-top-right-radius:0px;
+
+                /* 경계선을 이미지가 보일정도의 두배로 설정 */
+                
+
+                border: 30px solid transparent;
+
+                /* 경계선 이미지 */
+
+                border-image-source: url(./Images/border.png);
+                border-image-slice: 30 30;
+                border-image-repeat: round;
+
+                /* 요소 크기 */
+                width: 70%;
+                height: 300px;
+
+
+                /* 요소의 컨텐츠가 아니라 요소 자체를 가운데 정렬 */
+                margin-left: auto;
+                margin-right: auto;
+
+
+            }
+            /* 인라인 요소 , 너비 지정 불가능 */
+            a{background-color: red; width: 200px;}
+            em{background-color: aqua; width: 100%;}
+
+            /* 인라인 (블럭) 요소-너비 지정 가능 */
+            img{width:500px; border: 1px solid black;}
+            input{ background-color: aqua; width:100%;}
+            
+
+        </style>
+    </head>
+
+    <body>
+        <p class="aa">
+            <!-- 경계선 border / 요소크기 / 가운데 정렬 -->
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam corporis aperiam deleniti harum, cum, tempora doloremque animi ullam repudiandae, quasi maxime similique laborum magnam qui odio. Provident minima quis adipisci.
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laborum dolores iure placeat itaque consequuntur ducimus ab enim quod. Unde suscipit ipsa dolorum nostrum molestiae totam nemo distinctio eveniet laudantium saepe?
+        </p>
+
+        <!-- 인라인 요소의 크기 설정 및 가운데 정렬 -->
+
+        <!-- 인라인 요소 : 너비조정 불가능 -->
+        <a href="">anchor</a>
+        <em>Hello</em>
+        <!-- 인라인(블럭) 요소 : 너비 조정 씹가능 -->
+        <img src="./Images/image.png" alt="image">
+        <input type="text">
+
+
+        <!-- MARGIN -->
+        <div id="m">
+            <p id="p1">p1</p>
+            <p id="p2">p2</p>
+        </div>
+
+        <style>
+            /* 붙어 있는 두개의 요소가 서로 정수 마진을 주면 띄우고, 간격을 서로 벌린다. */
+            #p1{background-color: green; margin : 0px; height: 50px; margin-bottom: 20px;}
+            #p2{background-color: red; margin: 0px; height: 50px; margin-top: 10px;}
+
+            /* 음수 마진을 주면 요소가 겹친다. */
+            #p1{background-color: green; margin: 0px; height: 50px;}
+            #p2{background-color: red; margin: 0px; height:50px; margin-top:-20px;}
+        </style>
+
+        <p class="back">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui, voluptatibus in? Doloribus, cumque hic quaerat pariatur soluta voluptate eius? Cum dolorum reprehenderit dignissimos et nam ipsa, laborum natus harum dolorem!
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. A provident vero architecto? Commodi harum earum iste at possimus. Ea, voluptate consectetur laboriosam et excepturi ducimus vitae suscipit temporibus quod soluta!
+        </p>
+
+        <style>
+            p.back{
+                background-color: green;
+                background-image: url(./Images/image.png);
+                background-size: 200px 100px;
+                background-repeat: repeat-x;
+                background-repeat: repeat;
+                background-repeat: no-repeat;
+                background-position: center;
+                background-position: right top;
+                background-position: bottom center;
+            }
+        </style>
+
+        <p id="attach">
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cupiditate ipsum soluta error, aliquam beatae blanditiis debitis accusantium ad corrupti perspiciatis quidem quod facilis itaque tempore reiciendis sunt in, illum aliquid?
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Necessitatibus eligendi dolorem dolor assumenda nulla! Voluptate, placeat, ab, optio ex quae temporibus nam accusamus vitae nihil iusto pariatur asperiores sed id.
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Natus quos ad nihil placeat praesentium est nulla commodi qui dolores veniam voluptates labore, cum dicta quibusdam laudantium architecto quod enim error.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique quod consequatur recusandae temporibus, repudiandae blanditiis consectetur enim aspernatur? Dolorem expedita est tenetur nam natus ducimus voluptate sapiente fugit aliquam eligendi?
+        </p>
+
+        <style>
+            #attach{
+                width: 60%;
+                height: 300px;
+                border: 2px solid blue;
+                overflow: scroll;
+
+                margin-left: auto;
+                margin-right: auto;
+                background-image:url(./Images/image.png);
+                background-size: 200px 100px;
+                background-repeat: no-repeat;
+                background-position: center;
+
+                background-attachment:scroll; /* 요소가 스크롤 될때 배경도 같이 스크롤 */
+                background-attachment:local; /* 콘텐츠에 배경이 붙는 느낌입니다. */
+                background-attachment:fixed; /* 이 친구는 브라우저 배경에 붙어 댕김 (브라우저 스크롤시 따라감) */
+            }
+        </style>
+
+    </body>
+</html>
