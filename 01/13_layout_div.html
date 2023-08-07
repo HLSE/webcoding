@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>LayOut Css</title>
+
+        <style>
+            /* display 속성 */
+            #aa{display: inline; width : 300px;}
+            #aa{display: inline-block;}
+            /* inline 요소를 block 요소로 */
+            img.bb{display: block; width:150px; height: 170px;}
+            /* display : none */
+            #cc{display : none;}
+        </style>
+    </head>
+    <body>
+        <!-- display 속성 -->
+
+        <p id="aa">Hello world</p>
+
+        <a href="https://www.google.com">GOOGLE</a>
+
+        <strong>Good Morning</strong>
+
+        <img class="bb" src="./Images/Selfie_20230707_사과꽃피어날때_006.jpg" alt="picture">
+
+        <hr>
+
+        <!-- display : none -->
+        <ul>
+            <li>aaa</li>
+            <li id="cc">bbb</li>
+            <li>ccc</li>
+        </ul>
+
+        <hr>
+        
+        <!-- block 요소와 inline 요소를 같이 사용할 때에 고려 할 것. -->
+        <!-- block 요소 안에 inline 요소, 또는 다란 블럭 요소 모두 넣을 수 있음. -->
+        <div style="background-color: chocolate; border: 1px solid black;padding:5px;">Nice <strong> aaa</strong> world</div>
+        <div style="background-color: aqua; border: 1px solid; padding: 5px">Nice <p>aaa</p> world</div>
+
+        <!-- block요소 안에 같은 block 요소가 있다면? -->
+        <p style="background-color: aqua; border:1px solid blue;">nice<p>aaa</p>world</p>
+
+        <!-- inline 요소안에 block 요소를 넣으면 ? 원래 안됨. -->
+        <span style="background-color: yellow; border: 1px solid; padding:5px">Nice<p>aaa</p>world</span>
+
+        <hr>
+
+        <!-- position 속성 -->
+        <div class="aaa">
+            <p id="one">block #1</p>
+            <p id="two">누르면 쿠폰 즉시 지급</p>
+            <p id="three">block #3</p>
+        </div>
+
+        <style>
+            #one{
+                background-color: aqua;
+                width: 200px; height: 50px;
+            }
+            #two{
+                color:aqua;
+                background-image:url(./Images/Selfie_20230707_사과꽃피어날때_006.jpg);
+                text-align: center;
+                background-size: 200px;
+                width: 200px; height: 100px;
+
+                position: static; /* 놓여질 위치에 배치되는 즉, default */
+                position: relative; /* 원래 놓여질 위치에서 위치 속성으로 고정 가능한 속성. */
+                position: absolute; /* 문서의 좌측 상단을 기준으로 위치를 설정 (원래 배치될 위치에서 벗어남)*/
+                /* absolute일때 부모의 영역을 기준으로 상단에 배치하고 싶다면 부모 요소의 position 속성이 static이 아니면 가능 */
+
+                position: fixed; /* 브라우저 최상단을 기준으로 위치를 설정함 */
+
+                /* 위치좌표 설정 속성 [position : static일떄는 무시됨.] */
+                
+                /* top: 30px; */
+                /* left: 50px; */
+                right: 10px;
+                bottom: 20px;
+
+            }
+                
+
+            #three{
+                background-color: green;
+                width: 200px; height: 50px;
+            }
+            div.aaa{
+                background-color: brown;
+            }
+        </style>
+
+    </body>
+</html>

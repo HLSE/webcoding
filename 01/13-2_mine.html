@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>MINE</title>
+        <style>
+            @keyframes blink-effect{
+                50% { opacity: 0;}
+            }
+            .TEXT{
+
+                color:aqua;
+                padding-top: 10px;
+                display:flex;
+                justify-content: center;
+                align-items: center;
+                animation: blink-effect 0.5s step-end infinite;
+            }
+            .AD{
+                width: 200px; height: 80px; border: 2px solid black;
+                background-image:url(./Images/Selfie_20230707_사과꽃피어날때_006.jpg) ;
+                background-size: 200px;
+                display: block;
+                position: fixed;
+                bottom: 20px;
+                right:10px;
+                
+            }
+            .AD:hover{
+                cursor:pointer; 
+                width:400px; height: 200px;
+                background-image: url(./Images/Selfie_20230707_사과꽃피어날때_006.jpg);
+                background-size: 400px 
+            }
+            .AD:hover>p{
+                padding-top: 70px;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="AD" onclick="location.href='https://lostark.game.onstove.com/Main'">
+            <p class="TEXT">
+                클릭 즉시 쿠폰 지급 ! !
+            </p>
+        </div>
+    </body>
+</html>
