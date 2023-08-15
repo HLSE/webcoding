@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>hw</title>
+        <style>
+            *{}
+            .container{
+                display: grid;
+                grid-template-columns: auto auto auto auto;
+                grid-template-rows: 90px 300px 90px;
+            }
+            .container div{
+                text-align: center;
+                padding: 20px;
+                background-color: aquamarine;
+                border:1px solid black;
+                font-size:32px;
+            }
+            #block1{
+                grid-column-start: 1;
+                grid-column-end: 5;
+            }
+            #block3{
+                grid-column-start: 2;
+                grid-column-end: 4;
+            }
+            #block5{
+                grid-column-start: 1;
+                grid-column-end: 5;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div id="block1">Header</div>
+            <div id="block2">Menu</div>
+            <div id="block3">Content</div>
+            <div id="block4">Login</div>
+            <div id="block5">Footer</div>
+        </div>
+    </body>
+</html>

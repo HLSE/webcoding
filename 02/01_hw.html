@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>HW</title>
+
+        <style>
+            *{
+                margin:0px; padding:0px;
+            }
+            .aa{
+                width:90%;
+                border: 5px solid black;
+                margin-left: auto; margin-right: auto;
+            }
+            .aa>div{
+                width:100px; height: 100px;
+                display:inline-block;
+            }
+            .aa>div:first-child{
+                background-color: aqua;
+            }
+            .aa>div:nth-child(2){
+                background-color: red;
+            }
+            .aa>div:nth-child(3){
+                background-color: blue;
+            }
+            .aa>div:nth-child(4){
+                background-color: yellow;
+            }
+            .aa>div:last-child{
+                background-color: gray;
+            }
+            @media(screen),(min-width:100px){
+                .aa{
+                    width:99%;
+                }
+            }
+            @media(screen),(min-width:500px){
+                .aa>div:last-child{
+                    width:100%;
+                }
+            }
+            @media(screen),(min-width:700px){
+                .aa{
+                    height:100px;
+                }
+                .aa>div:nth-child(n){
+                    width:20%;
+                }
+                }
+        </style>
+    </head>
+
+    <body>
+        <div class="aa">
+            <!-- 만약 여기서 <div>
+
+            </div> 식으로 쓰면 칸이 멀어짐. 만약 float 방식으로 들어가면 상관이 없음. -->
+            <div>aa</div><div>bb</div><div>cc</div><div>dd</div><div>ee</div>
+        </div>
+    </body>
+</html>
