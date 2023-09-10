@@ -9,12 +9,18 @@
             // 새로고침을 눌렀을때 -> 고정되는 데이터 값 1, 2 고정 3 랜덤 4 고정 식으로.
             // <hr> start.
 
-            
+            var today = new Date();
+
+            document.write(today.getTime()+ "밀리초가 걸렸음");
+
             document.write("<hr>");
+            var array = ["사과","귤","오렌지"];
             alert("hi");
             alert("bye");
-            alert("rice");
-            alert("twicce");
+            for(var i=0; i<3; i++){
+                alert(array[i])
+            }
+            alert("twice");
         </script>
     </head>
 </html>

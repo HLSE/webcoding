@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>JQUERY Library</title>
+
+        <!-- Jquery Library 적용 -jquery.com -->
+        <!-- 1. 다운로드 방식
+        <script src="./js/jquery-3.7.1.js"></script> -->
+        <!-- cdn 방식 -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+            <!-- 위 스크립트 코드는 외부 문서링크로 불러 온 것. -->
+
+        <script>
+            // html body 문서의 로드가 완료 되었을때 발동하는 이벤트 처리
+            jQuery(document).ready(function() {
+                // alert("ready!")
+                $("#btn").click(function() {
+                    alert("clicked!");
+                    // 레거시한 방법 onclick을 기억하고 넘어가자.
+                })
+
+                // 애니메이션 효과 집어넣기
+                $("#b1").click(function(){
+                    $("img").hide(3000)
+                })
+                $("#b2").click(function(){
+                    $("img").show("fast")
+                })
+                $("#b3").click(function(){
+                    $("img").toggle("slow")
+                })
+                $("#b4").click(function(){
+                    $("img").slideUp()
+                })
+                $("#b5").click(function(){
+                    $("img").slideDown()
+                })                      
+                $("#b6").click(function(){
+                     $("img").slideToggle()
+                })
+            })
+        </script>
+    </head>
+
+    <body>
+        <button id="btn">Button</button>
+        <hr>
+        <!-- 애니메이션 효과 -->
+        <button id="b1">hide</button>
+        <button id="b2">show</button>
+        <button id="b3">toggle</button>
+        <button id="b4">slideUp</button>
+        <button id="b5">slideDown</button>
+        <button id="b6">slideToggle</button>
+
+        <img src="./Images/KakaoTalk_20230719_212037570.jpg" alt="bg" width="200">
+        <hr>
+
+        <p id="p1">이 요소에는 <strong>스트롱 </strong>요소가 있음</p>
+        <button id="btn1">Text() 읽기</button> <!-- 데이터 값만 -->
+        <button id="btn2">HTML() 읽기</button> <!-- 요소 전부다 -->
+
+        <script>
+            $("#btn1").click(function(){
+                alert($("#p1").text()) // 데이터 읽기
+            })
+            $("#btn2").click(function(){
+                alert($("#p1").html()) // 전부다 읽기 
+            })
+        </script>
+        <hr>
+        <h3 id="hh">여기에 Text Content 작성해보기</h3>
+        <button id="btn3">Text() 쓰기</button>
+        <button id="btn4">HTML() 쓰기</button>
+        <script>
+            $("#btn3").click(function(){
+                $("#hh").text('텍스트 추가 <a href="">Google</a>')
+            })
+            $("#btn4").click(function(){
+                $("#hh").html('텍스트 추가 <a href="https://www.google.com">Google</a')
+            })
+        </script>
+        
+    </body>
+</html>

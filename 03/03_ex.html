@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>JS Number Object</title>
+    </head>
+    <body>
+        <script>
+
+            // 2.Number - 마치 안드로이드의 Wrapper 클래스 같은 역할
+            
+            // 수치형과 Number는 다른 자료형
+            var a=10 //수치형 
+            var b=new Number(10); //object형 이라고 분류합니다.
+
+            document.write(typeof(a)+"<br>")
+            document.write(typeof(b)+"<br>")
+            document.write((a==b)+"<br>")   // 값을 검증 값이 같으므로 true
+            document.write((a===b)+"<br>") //자료형을 검증 자료형이 다르므로 false
+
+            
+            // Number객체의 유용한 기능들 ..메소드들
+            var num=new Number(123.456)
+
+            // 1) 지수 표현식
+                document.write(num.toExponential()+"<br>")
+                document.write(num.toExponential(2)+"<br>") // 소수점 2자리까지만 
+
+            // 2)소수점 자르기 [ 부동 소수점 --> 고정 소수점 표현 방식]
+            document.write(num.toFixed()+"<br>")
+            document.write(num.toFixed(3)+"<br>") //소수점 3자리
+
+            // 3)진법 변환 표기(String으로 변환)
+            var num=new Number(10)
+            document.write(num.toString()+"<br>") //10진법
+            document.write(num.toString(16) + "<br>") //16진법
+            document.write(num.toString(8)+"<br>") //8진법
+            document.write(num.toString(2)+"<br>") //2진법
+
+            // 수치형은 Number 객체로 자동 Wrapping 됨
+            var a=255;
+            document.write(a.toString(16)+"<br>")
+
+            // 변수에 넣지 않고도 수치형 값을 곧바로 Number로 사용할때는 소수점이 필수 
+            document.write(10.54321.toFixed(2)+"<br>")
+            document.write(10.00.toString(2)+"<br>")
+            
+            // 3.String - 문자형의 wrapper
+            var a="Hello"
+            var b=new String("Hello")
+            document.write("<hr>"+ typeof(a)+"<br>")
+            document.write(typeof(b)+"<br>")
+            document.write((a==b)+"<br>") //값이 일치하기에 True
+            document.write((a===b)+"<br>")//자료형이 일치하지 않기에 false
+
+            // String 내장객체의 주요기능 메소드들 
+            var s="Hello World" //자동 warpping
+            document.write(s.length+"<br>") //property: 글자수
+            document.write(s.toUpperCase() +"<br>") //대문자
+            document.write(s.toLowerCase()+"<br>") //소문자
+            document.write(s+"<br>") //원본은 불변
+
+            document.write(s.concat("Nice")+"<br>")
+            document.write(s.indexOf("Wor")+"<br>")
+            document.write(s.indexOf("word")+"<br>") //못찾으면 -1
+
+            // 문자열 중에서 원하는 문자를 탐색.. match
+            var str="Hello world Nice to meet you. 안녕하세요 반갑습니다. Nice work nice study"
+
+            var search=str.match("Hello")
+            document.write("탐색결과 : "+search+"<br>")
+
+            var search=str.match("hello") //대소문자 구별.. 없으면 null
+            document.write("탐색결과 : "+search+"<br>") 
+
+            //  /hello/ <-- 이 표기볍: 정규표현식 -추후 수업예정
+            var search=str.match(/hello/i) //대소문자 구별없이 탐색하는 옵션 i
+            document.write("탐색결과 : "+search+"<br>")
+
+            // 탐색 결과가 여러개일때
+            var search=str.match(/Nice/g) //여러개를 찾고싶으면 옵션 g 여러개이므로 결과는 배열로 리턴
+            document.write("탐색결과 :"+search+"<br>")
+
+            var search=str.match(/Nice/ig) //대소문자 구분없이 여러개 찾고싶다면 옵션 모두 사용
+            document.write("탐색결과 :"+search+"<br>")
+
+            // 한글도됨
+            var search=str.match(/안녕/ig)
+            document.write("탐색결과:"+search+"<br>")
+
+
+        </script>
+    </body>
+</html>

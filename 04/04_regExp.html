@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Js 유효성 검사</title>
+    </head>
+
+    <body>
+        
+        <input type="text" id="in1">
+        <button onclick="chack()">유효성 검증</button>
+        <h3 id="aa"></h3>
+
+        <script>
+
+            function chack() {
+                // 검증용 정규 표현식
+
+                var regExp=/^[a-zA-Z]+$/ //RegExp 객체 // 영문자 1개 이상
+
+                var e=document.getElementById("in1");
+                // 입력된 글씨값 얻어오기
+                var s=e.value;
+
+                // 검증 두가지 방법
+                // 1. String . match() method
+                // if(s.match(regExp)){
+                //     alert("OK")
+                // }else alert("요구하는 형식이 아리마셍")
+
+                // 2.RegExp 객체의 test() method
+                // if(regExp.test(s)) alert("OK")
+                // else alert("요구하는 형식이 아닙니데스")
+
+
+                // 정규 표현식 연습
+                regExp=/a/; // a 문자가 포함된 모든 입력 ok
+                regExp=/A/; // A 문자가 포함된 모든 입력 ok
+                regExp=/a-b/; // ab문자가 포함된 모든 입력 ok
+                regExp=/^a/ // 시작이 무조건 A 포함된 모든 입력 ok
+                regExp=/^[a-z]/ // 시작이 무조건 소문자 ok
+                regExp=/a$/ // 마지막이 무조건 a ok
+                regExp=/A$/ // 마지막이 무조건 A ok
+                regExp=/^a$/ // a만 존재 할 때 ok
+                regExp=/^ab$/ // ab만 존재 할 때 ok
+                regExp=/^[a-z]$/ // a~z중 한 글자만 ok
+                regExp=/^[a-zA-Z]$/ // a~z중 A~Z 한 글자만 ok
+                regExp=/^[a-z0-9]$/ // a~z중 or 한자릿수만 ok
+                regExp=/^[a-z]{2}$/ // 소문자 2글자만 ok {원하는 글자 수 만큼.}$
+                regExp=/^[a-z]{2,4}$/ // 소문자 2글자 ~ 4글자만 ok
+                regExp=/^[a-z]{4,}$/ // 4글자 이상만 ok
+                regExp=/^w{4,}$/
+                regExp=/^[a-z0-9]{4,}$/ // 소문자 or 숫자 4글자 이상 사용해야 ok
+                regExp=/^[a-z]+$/ // 영어 소문자 1개 이상. 
+                regExp=/^[a-z]?$/ // 영어 소문자 1개 or 0개 이상
+                regExp=/^[a-z]*$/ // 영어 소문자 0개 이상 (안 써도 ok)
+                regExp=/^[5-9]$/ // 숫자 5~9중에 한개만 ok
+                regExp=/^\d$/ // 숫자 한개 명령어.
+                regExp=/^\d\d\d$/ // 숫자 3개 명령어.
+                regExp=/^\d\d\da\d\d\da\d\d\da$/ //숫자 3개 a 숫자 3개 a 숫자 3개 a
+                regExp=/^\d\d\d\d-\d\d-\d\d$/
+                regExp=/^[a-zA-Z0-9]+@[a-zA-Z0-9]+\.[a-zA-Z0-9]+$/
+                regExp=/^https:\/\/+[a-zA-Z0-9]+[.]+[a-zA-Z0-9]+[.]+[a-zA-Z0-9]+$/
+
+                // 생년월일 검증 만들어보십셔
+                // 이메일 검증 만들어보십셔
+                // url 주소가 맞는지 확인 기능 만드십셔.
+
+                var h=document.getElementById("aa")
+                if(regExp.test(s)) h.innerHTML="ok"
+                else h.innerHTML="요구하는 형식이 아니라고."
+            }
+        </script>
+
+    </body>
+</html>

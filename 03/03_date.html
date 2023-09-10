@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>JS Date 내장객체</title>
+
+        <script>
+            // js에서 미리 설계해 놓은 내장객체들(생성자 함수들 - 자바의 class들)
+            // date, Number, String, Math, Array.. 들이 제일 주력.
+            
+            // 1.Date
+            var a= new Date(); //날짜 관리 객체 생성
+            document.write(a + "<br>"); // 참조 변수를 출력하면 자동 .toString이 발동
+            document.write(a.toString()+ "<br>");
+            document.write(typeof(a)+"<br>");
+            
+            // date 생성자 함수에 주요 기능들 method들\
+            document.write(a.toDateString() + "<br>");
+            document.write(a.toLocaleDateString()+ "<br>");
+            document.write(a.getYear() + "<br>"); // 1900년도부터
+            document.write(a.getFullYear() + "<br>");
+            document.write(a.getMonth()+ "<br>"); // 컴퓨터에선 0 ~ 11 월. ( 현실에선 1 ~ 12. 즉, 컴퓨터에선 지금 달에 -1을 해야 컴퓨터 Month)
+            document.write(a.getDate()+ "<br>"); // 근데 날에선 month처럼 -1 안 함 ㅋㅋ ㅄ 언어
+            document.write(a.getHours()+ "<br>"); // 24라는 시간이 x 0으로 바로 넘어감. 0 ~ 23 존재
+            document.write(a.getMinutes()+ "<br>"); // 0 ~ 59 존재. 60 존재 x 바로 0으로 넘어감
+            document.write(a.getSeconds()+ "<br>"); // 0 ~ 59 존재.
+            document.write(a.getTime()+ "<br>"); //currentTimeMillis 1970/1/1 0:0:0초 부터 지금까지 계산한 밀리초이다.
+
+            // set 기능 (생성자 함수에서 불러들어온 Date 내장객체를 설정하는 법)
+            var b = new Date();
+            document.write(b.toLocaleString() + "<br>");
+            b.setFullYear(2018);
+            document.write(b.toLocaleString() + "<br>");
+
+            // 생성자의 파라미터를 통해 특정 날짜로 설정 가능
+            var c = new Date(2025,4,9);
+            document.write(c.toLocaleString()+ "<br>");
+
+            c = new Date("web sep 13 2017 13:40:13 GMT+0900");
+            document.write(c.toLocaleString() + "<br>");
+
+            c = new Date("web sep 13 2017");
+            document.write(c.toLocaleString() + "<br>");
+
+            c = new Date("2017.9.13");
+            document.write(c.toLocaleString() + "<br>");
+            c = new Date(0);
+            document.write(c.toLocaleString() + "<br>");
+
+            // 두 날짜 사이의 비교
+            var a = new Date("2017.9.18");
+            var b = new Date;
+            var diff = b.getTime() - a.getTime();
+            // var diff = b - a;
+            document.write("두 날짜차이 : " + diff + "<br>");
+
+            // ms를 일수로 변환
+            var sec = diff/1000;
+            var min = sec/60;
+            var hour = min/60;
+            var day = hour/24;
+            var week = day/7;
+            var month = day/30;
+
+            // 한줄에 계산 하고 싶다면
+            var day = diff/(1000*60*60*24);
+            document.write("두 날짜 차이 : " + day + "<br>");
+
+            // 소수점 제거
+            day = Math.floor(day)
+            document.write("두 날짜 차이 : " + day + "<br>");
+
+
+        </script>
+
+    </head>
+
+    <body>
+        
+    </body>
+</html>
